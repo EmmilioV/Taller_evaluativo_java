@@ -4,6 +4,7 @@ import com.sofka.ejercicio1y2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
 import com.sofka.ejercicio5y6.ParesEImpares;
+import com.sofka.ejercicio7.MayorOIgualACero;
 
 import java.util.Scanner;
 
@@ -20,7 +21,8 @@ public class Main {
                     "3. Calcular area de un circulo\n" +
                     "4. Calcular precio de un prducto con IVA incluido\n" +
                     "5. Consultar numeros pares e impares del 1 al 100 (ciclo while)\n" +
-                    "6. Consultar numeros pares e impares del 1 al 100 (ciclo for)\n");
+                    "6. Consultar numeros pares e impares del 1 al 100 (ciclo for)\n" +
+                    "7. Comprobar si un numero es mayor o igual que cero");
             option = lector.nextInt();
 
             switch (option)
@@ -36,6 +38,8 @@ public class Main {
                 case 5: ejecutarEjercicio5();
                     break;
                 case 6: ejecutarEjercicio6();
+                    break;
+                case 7: ejecutarEjercicio7();
             }
         }while (option != 0);
     }
@@ -80,4 +84,10 @@ public class Main {
         paresEImpares.cargarArrayLists();
         paresEImpares.imprimirConCicloFor();
     }
+    private static void ejecutarEjercicio7() {
+        MayorOIgualACero objeto = new MayorOIgualACero();
+        objeto.ingresarNumero();
+        objeto.mostrarNumero();
+    }
+
 }
