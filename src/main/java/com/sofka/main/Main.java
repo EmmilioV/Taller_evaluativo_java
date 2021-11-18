@@ -3,7 +3,7 @@ package com.sofka.main;
 import com.sofka.ejercicio1y2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
-import com.sofka.ejercicio5.Ejercicio5;
+import com.sofka.ejercicio5y6.ParesEImpares;
 
 import java.util.Scanner;
 
@@ -19,7 +19,8 @@ public class Main {
                     "2. Dar dos numeros y conocer cual es mayor\n" +
                     "3. Calcular area de un circulo\n" +
                     "4. Calcular precio de un prducto con IVA incluido\n" +
-                    "5. Consultar numeros pares e impares del 1 al 100\n");
+                    "5. Consultar numeros pares e impares del 1 al 100 (ciclo while)\n" +
+                    "6. Consultar numeros pares e impares del 1 al 100 (ciclo for)\n");
             option = lector.nextInt();
 
             switch (option)
@@ -33,6 +34,8 @@ public class Main {
                 case 4: ejecutarEjercicio4();
                     break;
                 case 5: ejecutarEjercicio5();
+                    break;
+                case 6: ejecutarEjercicio6();
             }
         }while (option != 0);
     }
@@ -66,10 +69,15 @@ public class Main {
         producto.mostrarPrecioFinal();
     }
     private static void ejecutarEjercicio5() {
-        Ejercicio5 ejercicio5 = new Ejercicio5();
+        ParesEImpares paresEImpares = new ParesEImpares();
 
-        ejercicio5.cargarArrayLists();
-        ejercicio5.imprimirImpares();
-        ejercicio5.imprimirPares();
+        paresEImpares.cargarArrayLists();
+        paresEImpares.imprimirConCicloWhile();
+    }
+    private static void ejecutarEjercicio6() {
+        ParesEImpares paresEImpares = new ParesEImpares();
+
+        paresEImpares.cargarArrayLists();
+        paresEImpares.imprimirConCicloFor();
     }
 }
