@@ -5,7 +5,9 @@ import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
 import com.sofka.ejercicio5y6.ParesEImpares;
 import com.sofka.ejercicio7.MayorOIgualACero;
+import com.sofka.ejercicio8.Dia;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -40,6 +42,9 @@ public class Main {
                 case 6: ejecutarEjercicio6();
                     break;
                 case 7: ejecutarEjercicio7();
+                    break;
+                case 8: ejecutarEjercicio8();
+                    break;
             }
         }while (option != 0);
     }
@@ -88,6 +93,13 @@ public class Main {
         MayorOIgualACero objeto = new MayorOIgualACero();
         objeto.ingresarNumero();
         objeto.mostrarNumero();
+    }
+    private static void ejecutarEjercicio8() {
+        System.out.println("Ingrese el dia de la semana del que desea conocer si es dia laboral");
+        String nombreDia = lector.next().toLowerCase(Locale.ROOT);
+
+        Dia dia = new Dia(nombreDia);
+        dia.esDiaLaboral();
     }
 
 }
