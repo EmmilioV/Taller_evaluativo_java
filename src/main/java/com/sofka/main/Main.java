@@ -6,7 +6,8 @@ import com.sofka.ejercicio4.Producto;
 import com.sofka.ejercicio5y6.ParesEImpares;
 import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
-import com.sofka.ejercicio9.Texto;
+import com.sofka.ejercicio9y10.Texto;
+import jdk.swing.interop.SwingInterOpUtils;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -27,8 +28,9 @@ public class Main {
                     "6. Consultar numeros pares e impares del 1 al 100 (ciclo for)\n" +
                     "7. Comprobar si un numero es mayor o igual que cero\n" +
                     "8. Conocer si un dia de la semana ingresado es dia laboral\n" +
-                    "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n");
-            option = lector.nextInt();
+                    "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n" +
+                    "10. Ingresar frase y eliminar espacios\n");
+            option = Integer.parseInt(lector.nextLine());
 
             switch (option)
             {
@@ -49,6 +51,8 @@ public class Main {
                 case 8: ejecutarEjercicio8();
                     break;
                 case 9: ejecutarEjercicio9();
+                    break;
+                case 10: ejecutarEjercicio10();
                     break;
             }
         }while (option != 0);
@@ -112,6 +116,14 @@ public class Main {
 
         Texto texto = new Texto(frase);
         texto.reemplazarLetraYConcatenarFrase(fraseAConcatenar);
+        texto.mostrarFrase();
+    }
+    private static void ejecutarEjercicio10() {
+        System.out.print("Ingrese la frase: ");
+        String frase = lector.nextLine();
+
+        Texto texto = new Texto(frase);
+        texto.eliminarEspacios();
         texto.mostrarFrase();
     }
 
