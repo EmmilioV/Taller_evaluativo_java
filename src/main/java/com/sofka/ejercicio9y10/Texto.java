@@ -15,12 +15,7 @@ public class Texto {
 
     public void  eliminarEspacios()
     {
-        String[] palabras= this.frase.split(" ");
-        this.frase = "";
-        for (String palabra:
-             palabras) {
-            this.frase = this.frase.concat(palabra);
-        }
+        this.frase = this.frase.replace(" ","");
     }
 
     public void mostrarFrase()
