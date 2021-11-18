@@ -6,6 +6,7 @@ import com.sofka.ejercicio4.Producto;
 import com.sofka.ejercicio5y6.ParesEImpares;
 import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
+import com.sofka.ejercicio9.Texto;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -24,7 +25,9 @@ public class Main {
                     "4. Calcular precio de un prducto con IVA incluido\n" +
                     "5. Consultar numeros pares e impares del 1 al 100 (ciclo while)\n" +
                     "6. Consultar numeros pares e impares del 1 al 100 (ciclo for)\n" +
-                    "7. Comprobar si un numero es mayor o igual que cero");
+                    "7. Comprobar si un numero es mayor o igual que cero\n" +
+                    "8. Conocer si un dia de la semana ingresado es dia laboral\n" +
+                    "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n");
             option = lector.nextInt();
 
             switch (option)
@@ -44,6 +47,8 @@ public class Main {
                 case 7: ejecutarEjercicio7();
                     break;
                 case 8: ejecutarEjercicio8();
+                    break;
+                case 9: ejecutarEjercicio9();
                     break;
             }
         }while (option != 0);
@@ -100,6 +105,14 @@ public class Main {
 
         Dia dia = new Dia(nombreDia);
         dia.esDiaLaboral();
+    }
+    private static void ejecutarEjercicio9() {
+        String frase = "La sonrisa sera la mejor arma contra la tristeza.";
+        String fraseAConcatenar = " Usala, no te la guardes.";
+
+        Texto texto = new Texto(frase);
+        texto.reemplazarLetraYConcatenarFrase(fraseAConcatenar);
+        texto.mostrarFrase();
     }
 
 }
