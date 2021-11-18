@@ -2,19 +2,22 @@ package com.sofka.main;
 
 import com.sofka.ejercicio1y2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
+import com.sofka.ejercicio4.Producto;
 
 import java.util.Scanner;
 
 public class Main {
 
-    static Scanner lector = new Scanner(System.in);;
+    static Scanner lector = new Scanner(System.in);
 
     public static void main(String[] args) {
         int option = 0;
         do {
-            System.out.println("Ingrese la opcion que deseea ejecutar: \n" +
-                    "1. Ejecutar ejercicio 1\n" +
-                    "2. Ejecutar ejercicio 2\n");
+            System.out.println("Ingrese el ejercicio que deseea ejecutar: \n" +
+                    "1. Conocer cual numero es mayor\n" +
+                    "2. Dar dos numeros y conocer cual es mayor\n" +
+                    "3. Calcular area de un circulo\n" +
+                    "4. Calcular precio de un prducto con IVA incluido\n");
             option = lector.nextInt();
 
             switch (option)
@@ -24,6 +27,8 @@ public class Main {
                 case 2: ejecutarEjercicio2();
                     break;
                 case 3: ejecutarEjercicio3();
+                    break;
+                case 4: ejecutarEjercicio4();
             }
         }while (option != 0);
     }
@@ -47,5 +52,13 @@ public class Main {
 
         Circulo circulo = new Circulo(radio);
         circulo.calcularArea();
+    }
+    private static void ejecutarEjercicio4() {
+        System.out.println("Digite el precio del producto");
+        double precio = lector.nextDouble();
+        Producto producto = new Producto(precio);
+
+        producto.calcularPrecioFinal();
+        producto.mostrarPrecioFinal();
     }
 }
