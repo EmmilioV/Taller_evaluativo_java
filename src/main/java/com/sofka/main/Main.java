@@ -10,6 +10,7 @@ import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
 import com.sofka.ejercicio9_10_11.Texto;
 
+import javax.swing.text.html.Option;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -34,7 +35,8 @@ public class Main {
                     "11. Ingresar frase para conocer su longitud y cantidad de vocales\n" +
                     "12. Digitar dos palabras y compararlas.\n" +
                     "13. Consultar fecha y hora actual\n" +
-                    "14. Numeros de 2 en 2 hasta mil desde un dato ingresado");
+                    "14. Numeros de 2 en 2 hasta mil desde un dato ingresado\n" +
+                    "15. Menú de opciones GESTIÓN CINEMATOGRAFICA");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -66,6 +68,8 @@ public class Main {
                 case 13: ejecutarEjercicio13();
                     break;
                 case 14: ejecutarEjercicio14();
+                    break;
+                case 15: ejecutarEjercicio15();
                     break;
             }
         }while (option != 0);
@@ -173,5 +177,35 @@ public class Main {
             numero +=2;
         }
     }
+    private static void ejecutarEjercicio15() {
 
+        int opcion;
+        do {
+            System.out.println("****** GESTION CINEMATOGRAFICA ********\n" +
+                    "1-NUEVO ACTOR\n" +
+                    "2-BUSCAR ACTOR\n" +
+                    "3-ELIMINAR ACTOR\n" +
+                    "4-MODIFICAR ACTOR\n" +
+                    "5-VER TODOS LOS ACTORES\n" +
+                    "6- VER PELICULAS DE LOS ACTORES\n" +
+                    "7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES\n" +
+                    "8-SALIR ");
+            opcion =Integer.parseInt(lector.next());
+
+            switch (opcion)
+            {
+                case 1: break;
+                case 2: break;
+                case 3: break;
+                case 4: break;
+                case 5: break;
+                case 6: break;
+                case 7: break;
+                case 8: break;
+                default:
+                    System.out.println("OPCION INCORRECTA");
+                    break;
+            }
+        }while (opcion != 8);
+    }
 }
