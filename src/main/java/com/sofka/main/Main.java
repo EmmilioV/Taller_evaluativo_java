@@ -33,7 +33,8 @@ public class Main {
                     "10. Ingresar frase y eliminar espacios\n" +
                     "11. Ingresar frase para conocer su longitud y cantidad de vocales\n" +
                     "12. Digitar dos palabras y compararlas.\n" +
-                    "13. Consultar fecha y hora actual");
+                    "13. Consultar fecha y hora actual\n" +
+                    "14. Numeros de 2 en 2 hasta mil desde un dato ingresado");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -63,6 +64,8 @@ public class Main {
                 case 12: ejecutarEjercicio12();
                     break;
                 case 13: ejecutarEjercicio13();
+                    break;
+                case 14: ejecutarEjercicio14();
                     break;
             }
         }while (option != 0);
@@ -159,6 +162,16 @@ public class Main {
         Fecha fecha = new Fecha();
 
         fecha.mostrarFechaYHoraActual();
+    }
+    private static void ejecutarEjercicio14() {
+        System.out.print("Ingresa el numero desde donde quieres empezar los saltos: ");
+        int numero =Integer.parseInt(lector.next());
+
+        while (numero<=1000)
+        {
+            System.out.println(numero);
+            numero +=2;
+        }
     }
 
 }
