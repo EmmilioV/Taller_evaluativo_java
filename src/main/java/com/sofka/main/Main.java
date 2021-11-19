@@ -1,6 +1,7 @@
 package com.sofka.main;
 
 import com.sofka.ejercicio12.EjercicioDoce;
+import com.sofka.ejercicio13.Fecha;
 import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
@@ -31,7 +32,8 @@ public class Main {
                     "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n" +
                     "10. Ingresar frase y eliminar espacios\n" +
                     "11. Ingresar frase para conocer su longitud y cantidad de vocales\n" +
-                    "12. Digitar dos palabras y compararlas.");
+                    "12. Digitar dos palabras y compararlas.\n" +
+                    "13. Consultar fecha y hora actual");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -59,6 +61,8 @@ public class Main {
                 case 11: ejecutarEjercicio11();
                     break;
                 case 12: ejecutarEjercicio12();
+                    break;
+                case 13: ejecutarEjercicio13();
                     break;
             }
         }while (option != 0);
@@ -150,6 +154,11 @@ public class Main {
 
         EjercicioDoce objeto = new EjercicioDoce(primeraPalabra, segundaPalabra);
         objeto.compararPalabras();
+    }
+    private static void ejecutarEjercicio13() {
+        Fecha fecha = new Fecha();
+
+        fecha.mostrarFechaYHoraActual();
     }
 
 }
