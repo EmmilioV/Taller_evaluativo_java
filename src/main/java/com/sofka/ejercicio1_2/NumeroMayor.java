@@ -1,4 +1,4 @@
-package com.sofka.ejercicio1y2;
+package com.sofka.ejercicio1_2;
 
 public class NumeroMayor {
     double primer_numero;

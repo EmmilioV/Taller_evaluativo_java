@@ -1,4 +1,4 @@
-package com.sofka.ejercicio5y6;
+package com.sofka.ejercicio5_6;
 
 import java.util.ArrayList;
 

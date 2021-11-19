@@ -1,13 +1,12 @@
 package com.sofka.main;
 
-import com.sofka.ejercicio1y2.NumeroMayor;
+import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
-import com.sofka.ejercicio5y6.ParesEImpares;
+import com.sofka.ejercicio5_6.ParesEImpares;
 import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
-import com.sofka.ejercicio9y10.Texto;
-import jdk.swing.interop.SwingInterOpUtils;
+import com.sofka.ejercicio9_10_11.Texto;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -29,7 +28,8 @@ public class Main {
                     "7. Comprobar si un numero es mayor o igual que cero\n" +
                     "8. Conocer si un dia de la semana ingresado es dia laboral\n" +
                     "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n" +
-                    "10. Ingresar frase y eliminar espacios\n");
+                    "10. Ingresar frase y eliminar espacios\n" +
+                    "11. Ingresar frase para conocer su longitud y cantidad de vocales");
             option = Integer.parseInt(lector.nextLine());
 
             switch (option)
@@ -53,6 +53,8 @@ public class Main {
                 case 9: ejecutarEjercicio9();
                     break;
                 case 10: ejecutarEjercicio10();
+                    break;
+                case 11: ejecutarEjercicio11();
                     break;
             }
         }while (option != 0);
@@ -125,6 +127,14 @@ public class Main {
         Texto texto = new Texto(frase);
         texto.eliminarEspacios();
         texto.mostrarFrase();
+    }
+    private static void ejecutarEjercicio11() {
+        System.out.print("Ingrese la frase: ");
+        String frase = lector.nextLine();
+
+        Texto texto = new Texto(frase);
+        texto.asignaryMostrarLongitud(true);
+        texto.contarVocalesYMostrar();
     }
 
 }
