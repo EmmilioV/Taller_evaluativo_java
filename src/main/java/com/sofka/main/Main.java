@@ -2,6 +2,8 @@ package com.sofka.main;
 
 import com.sofka.ejercicio12.EjercicioDoce;
 import com.sofka.ejercicio13.Fecha;
+import com.sofka.ejercicio16.ControladorPersona;
+import com.sofka.ejercicio16.Persona;
 import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
@@ -10,7 +12,6 @@ import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
 import com.sofka.ejercicio9_10_11.Texto;
 
-import javax.swing.text.html.Option;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -36,7 +37,8 @@ public class Main {
                     "12. Digitar dos palabras y compararlas.\n" +
                     "13. Consultar fecha y hora actual\n" +
                     "14. Numeros de 2 en 2 hasta mil desde un dato ingresado\n" +
-                    "15. Menú de opciones GESTIÓN CINEMATOGRAFICA");
+                    "15. Menú de opciones GESTIÓN CINEMATOGRAFICA\n" +
+                    "16. Ingresar datos de objeto Persona");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -70,6 +72,8 @@ public class Main {
                 case 14: ejecutarEjercicio14();
                     break;
                 case 15: ejecutarEjercicio15();
+                    break;
+                case 16: ejecutarEjercicio16();
                     break;
             }
         }while (option != 0);
@@ -207,5 +211,9 @@ public class Main {
                     break;
             }
         }while (opcion != 8);
+    }
+    private static void ejecutarEjercicio16() {
+        ControladorPersona controladorPersona = new ControladorPersona();
+        controladorPersona.iniciarFlujo();
     }
 }
