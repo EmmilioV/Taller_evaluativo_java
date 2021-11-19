@@ -1,5 +1,6 @@
 package com.sofka.main;
 
+import com.sofka.ejercicio12.EjercicioDoce;
 import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
@@ -29,8 +30,9 @@ public class Main {
                     "8. Conocer si un dia de la semana ingresado es dia laboral\n" +
                     "9. Reemplazar las 'a' de una frase por la 'e' y concatenar una frase\n" +
                     "10. Ingresar frase y eliminar espacios\n" +
-                    "11. Ingresar frase para conocer su longitud y cantidad de vocales");
-            option = Integer.parseInt(lector.nextLine());
+                    "11. Ingresar frase para conocer su longitud y cantidad de vocales\n" +
+                    "12. Digitar dos palabras y compararlas.");
+            option = Integer.parseInt(lector.next());
 
             switch (option)
             {
@@ -55,6 +57,8 @@ public class Main {
                 case 10: ejecutarEjercicio10();
                     break;
                 case 11: ejecutarEjercicio11();
+                    break;
+                case 12: ejecutarEjercicio12();
                     break;
             }
         }while (option != 0);
@@ -121,6 +125,7 @@ public class Main {
         texto.mostrarFrase();
     }
     private static void ejecutarEjercicio10() {
+        lector.nextLine();
         System.out.print("Ingrese la frase: ");
         String frase = lector.nextLine();
 
@@ -129,12 +134,22 @@ public class Main {
         texto.mostrarFrase();
     }
     private static void ejecutarEjercicio11() {
+        lector.nextLine();
         System.out.print("Ingrese la frase: ");
         String frase = lector.nextLine();
 
         Texto texto = new Texto(frase);
         texto.asignaryMostrarLongitud(true);
         texto.contarVocalesYMostrar();
+    }
+    private static void ejecutarEjercicio12() {
+        System.out.println("Ingrese la primera palabra ");
+        String primeraPalabra = lector.next();
+        System.out.println("Ingrese la primera palabra ");
+        String segundaPalabra = lector.next();
+
+        EjercicioDoce objeto = new EjercicioDoce(primeraPalabra, segundaPalabra);
+        objeto.compararPalabras();
     }
 
 }
