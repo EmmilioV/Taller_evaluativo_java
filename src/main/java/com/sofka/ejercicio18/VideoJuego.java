@@ -7,14 +7,14 @@ public class VideoJuego implements IEntregable{
     LocalTime horasEstimadas;
     boolean entregado;
     String genero;
-    String compañia;
+    String compania;
 
     public VideoJuego() {
         this.titulo = "";
         this.horasEstimadas = LocalTime.of(10,00);
         this.entregado = false;
         this.genero = "";
-        this.compañia = "";
+        this.compania = "";
     }
 
     public VideoJuego(String titulo, LocalTime horasEstimadas) {
@@ -22,15 +22,15 @@ public class VideoJuego implements IEntregable{
         this.horasEstimadas = horasEstimadas;
         this.entregado = false;
         this.genero = "";
-        this.compañia = "";
+        this.compania = "";
     }
 
-    public VideoJuego(String titulo, LocalTime horasEstimadas, String genero, String compañia) {
+    public VideoJuego(String titulo, LocalTime horasEstimadas, String genero, String compania) {
         this.titulo = titulo;
         this.horasEstimadas = horasEstimadas;
         this.entregado = false;
         this.genero = genero;
-        this.compañia = compañia;
+        this.compania = compania;
     }
 
     @Override
@@ -77,12 +77,12 @@ public class VideoJuego implements IEntregable{
         this.genero = genero;
     }
 
-    public String getCompañia() {
-        return compañia;
+    public String getCompania() {
+        return compania;
     }
 
-    public void setCompañia(String compañia) {
-        this.compañia = compañia;
+    public void setCompania(String compania) {
+        this.compania = compania;
     }
 
     @Override
@@ -92,7 +92,7 @@ public class VideoJuego implements IEntregable{
                 ", horasEstimadas=" + horasEstimadas +
                 ", entregado=" + entregado +
                 ", genero='" + genero + '\'' +
-                ", compañia='" + compañia + '\'' +
+                ", compañia='" + compania + '\'' +
                 '}';
     }
 }
