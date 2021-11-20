@@ -7,6 +7,8 @@ import com.sofka.ejercicio16.Persona;
 import com.sofka.ejercicio17.Electrodomestico;
 import com.sofka.ejercicio17.Lavadora;
 import com.sofka.ejercicio17.Television;
+import com.sofka.ejercicio18.Serie;
+import com.sofka.ejercicio18.VideoJuego;
 import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
@@ -16,6 +18,7 @@ import com.sofka.ejercicio8.Dia;
 import com.sofka.ejercicio9_10_11.Texto;
 
 import javax.naming.PartialResultException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -44,7 +47,8 @@ public class Main {
                     "14. Numeros de 2 en 2 hasta mil desde un dato ingresado\n" +
                     "15. Menú de opciones GESTIÓN CINEMATOGRAFICA\n" +
                     "16. Ingresar datos de objeto Persona\n" +
-                    "17. Conocer precioFinal de los electrodomesticos");
+                    "17. Conocer precioFinal de los electrodomesticos por medio de herencia\n" +
+                    "18. Implementación de interface para entregar libros, series y mostrar su info");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -82,6 +86,8 @@ public class Main {
                 case 16: ejecutarEjercicio16();
                     break;
                 case 17: ejecutarEjercicio17();
+                    break;
+                case 18: ejecutarEjercicio18();
                     break;
             }
         }while (option != 0);
@@ -270,5 +276,35 @@ public class Main {
                 + preciosLavadoras + " TOTAL: " + sumaPreciosLavadoras + "\n"
                 + preciosElectrodomesticos + " TOTAL: " + sumaPreciosElectrodomesticos);
         System.out.println("PARA UN RESULTADO TOTAL DE: " + (sumaPreciosTelevisores+sumaPreciosLavadoras+sumaPreciosElectrodomesticos));
+    }
+    private static void ejecutarEjercicio18() {
+        ArrayList<Serie> series = new ArrayList<>(5);
+        ArrayList<VideoJuego> videoJuegos = new ArrayList<>(5);
+
+        series.add(new Serie("Cazadores de sombras", "Cassandra Clare"));
+        series.add(new Serie("Sex Education",3,"Drama-Comedia", "Cassandra Clare"));
+        series.add(new Serie("The Umbrella Academy", "Kevin Lafferty"));
+        series.add(new Serie("Titans", 3, "Accion","Cassandra Clare"));
+        series.add(new Serie("la saga Winx", "Archery Pictures"));
+
+        videoJuegos.add(new VideoJuego("Minecraft", LocalTime.of(2,00)));
+        videoJuegos.add(new VideoJuego("Halo", LocalTime.of(1,00)));
+        videoJuegos.add(new VideoJuego());
+        videoJuegos.add(new VideoJuego("Minions", LocalTime.of(0,30), "infantil", "Gameloft"));
+        videoJuegos.add(new VideoJuego("Crash", LocalTime.of(3,00)));
+
+        series.get(0).entregar();
+        series.get(1).entregar();
+        videoJuegos.get(2).entregar();
+        videoJuegos.get(4).entregar();
+
+        System.out.println("Hay " + videoJuegos.stream().filter(x->x.isEntregado()).count() + " video juegos entregados.");
+        System.out.println("Hay " + series.stream().filter(x->x.isEntregado()).count() + " series entregadas.");
+
+        series.get(0).devolver();
+        series.get(1).devolver();
+        videoJuegos.get(2).devolver();
+        videoJuegos.get(4).devolver();
+
     }
 }

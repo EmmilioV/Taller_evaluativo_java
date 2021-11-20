@@ -1,6 +1,6 @@
 package com.sofka.ejercicio18;
 
-public class Serie {
+public class Serie implements IEntregable{
     String titulo;
     int numeroTemporadas;
     boolean entregado;
@@ -29,6 +29,24 @@ public class Serie {
         this.genero = genero;
         this.creador = creador;
     }
+
+    @Override
+    public void entregar() {
+        this.entregado = true;
+    }
+
+    @Override
+    public void devolver() {
+        this.entregado = false;
+    }
+
+    @Override
+    public boolean isEntregado() {
+        return this.entregado;
+    }
+
+    @Override
+    public int compareTo(Object a) {return 0;}
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
@@ -72,4 +90,5 @@ public class Serie {
                 ", creador='" + creador + '\'' +
                 '}';
     }
+
 }

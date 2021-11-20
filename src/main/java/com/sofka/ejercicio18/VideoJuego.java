@@ -2,7 +2,7 @@ package com.sofka.ejercicio18;
 
 import java.time.LocalTime;
 
-public class VideoJuego {
+public class VideoJuego implements IEntregable{
     String titulo;
     LocalTime horasEstimadas;
     boolean entregado;
@@ -31,6 +31,26 @@ public class VideoJuego {
         this.entregado = false;
         this.genero = genero;
         this.compañia = compañia;
+    }
+
+    @Override
+    public void entregar() {
+        this.entregado = true;
+    }
+
+    @Override
+    public void devolver() {
+        this.entregado = false;
+    }
+
+    @Override
+    public boolean isEntregado() {
+        return this.entregado;
+    }
+
+    @Override
+    public int compareTo(Object a) {
+        return  0;
     }
 
     public String getTitulo() {
