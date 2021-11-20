@@ -52,6 +52,11 @@ public class Electrodomestico {
 
     private String comprobarColor(String color) {
         ArrayList<String> colores = new ArrayList<>();
+        colores.add("blanco");
+        colores.add("negro");
+        colores.add("rojo");
+        colores.add("azul");
+        colores.add("gris");
 
         if(colores.stream().filter(x->x.equalsIgnoreCase(color)).count() != 0)
             return color.toLowerCase();
@@ -115,5 +120,9 @@ public class Electrodomestico {
 
     public double getPeso() {
         return peso;
+    }
+
+    public double getPrecioFinal() {
+        return precioFinal;
     }
 }

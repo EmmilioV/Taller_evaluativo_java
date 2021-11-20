@@ -4,6 +4,9 @@ import com.sofka.ejercicio12.EjercicioDoce;
 import com.sofka.ejercicio13.Fecha;
 import com.sofka.ejercicio16.ControladorPersona;
 import com.sofka.ejercicio16.Persona;
+import com.sofka.ejercicio17.Electrodomestico;
+import com.sofka.ejercicio17.Lavadora;
+import com.sofka.ejercicio17.Television;
 import com.sofka.ejercicio1_2.NumeroMayor;
 import com.sofka.ejercicio3.Circulo;
 import com.sofka.ejercicio4.Producto;
@@ -12,6 +15,8 @@ import com.sofka.ejercicio7.MayorOIgualACero;
 import com.sofka.ejercicio8.Dia;
 import com.sofka.ejercicio9_10_11.Texto;
 
+import javax.naming.PartialResultException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -39,7 +44,7 @@ public class Main {
                     "14. Numeros de 2 en 2 hasta mil desde un dato ingresado\n" +
                     "15. Menú de opciones GESTIÓN CINEMATOGRAFICA\n" +
                     "16. Ingresar datos de objeto Persona\n" +
-                    "17. ");
+                    "17. Conocer precioFinal de los electrodomesticos");
             option = Integer.parseInt(lector.next());
 
             switch (option)
@@ -75,6 +80,8 @@ public class Main {
                 case 15: ejecutarEjercicio15();
                     break;
                 case 16: ejecutarEjercicio16();
+                    break;
+                case 17: ejecutarEjercicio17();
                     break;
             }
         }while (option != 0);
@@ -216,5 +223,52 @@ public class Main {
     private static void ejecutarEjercicio16() {
         ControladorPersona controladorPersona = new ControladorPersona();
         controladorPersona.iniciarFlujo();
+    }
+    private static void ejecutarEjercicio17() {
+        Television television;
+        Lavadora lavadora;
+        String preciosTelevisores = "PRECIOS TELEVISORES:\n";
+        String preciosLavadoras = "PRECIOS LAVADORAS:\n";
+        String preciosElectrodomesticos = "PRECIOS ELECTRODOMESTICOS:\n";
+        double sumaPreciosTelevisores = 0;
+        double sumaPreciosLavadoras = 0;
+        double sumaPreciosElectrodomesticos = 0;
+
+        ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>(10);
+        electrodomesticos.add(new Lavadora(100,"Azul", 'E',153,50));
+        electrodomesticos.add(new Lavadora(135,"Purpura", 'K',15,50));
+        electrodomesticos.add(new Television(250,"Azul", 'A',35,50,true));
+        electrodomesticos.add(new Electrodomestico(400,"Negro", 'A',15));
+        electrodomesticos.add(new Lavadora(135,"Purpura", 'K',15,50));
+        electrodomesticos.add(new Television(300,"Negro", 'E',10,32,false));
+        electrodomesticos.add(new Electrodomestico(200,"Rojo", 'A',15));
+        electrodomesticos.add(new Television(85,"Negro", 'F',15,65,false));
+
+        for (Electrodomestico electrodomestico:
+             electrodomesticos) {
+            if(electrodomestico instanceof Television) {
+                television = ((Television)electrodomestico);
+                television.PrecioFinal();
+                preciosTelevisores += television.getPrecioFinal() + "\n";
+                sumaPreciosTelevisores += television.getPrecioFinal();
+            }
+            else if(electrodomestico instanceof Lavadora) {
+                lavadora = ((Lavadora)electrodomestico);
+                lavadora.PrecioFinal();
+                preciosLavadoras += lavadora.getPrecioFinal() + "\n";
+                sumaPreciosLavadoras += lavadora.getPrecioFinal();
+            }
+            else
+            {
+                electrodomestico.PrecioFinal();
+                preciosElectrodomesticos += electrodomestico.getPrecioFinal() + "\n";
+                sumaPreciosElectrodomesticos += electrodomestico.getPrecioFinal();
+            }
+        }
+
+        System.out.println(preciosTelevisores + " TOTAL: " + sumaPreciosTelevisores + "\n"
+                + preciosLavadoras + " TOTAL: " + sumaPreciosLavadoras + "\n"
+                + preciosElectrodomesticos + " TOTAL: " + sumaPreciosElectrodomesticos);
+        System.out.println("PARA UN RESULTADO TOTAL DE: " + (sumaPreciosTelevisores+sumaPreciosLavadoras+sumaPreciosElectrodomesticos));
     }
 }
