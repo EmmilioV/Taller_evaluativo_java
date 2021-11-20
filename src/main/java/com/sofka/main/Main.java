@@ -38,7 +38,8 @@ public class Main {
                     "13. Consultar fecha y hora actual\n" +
                     "14. Numeros de 2 en 2 hasta mil desde un dato ingresado\n" +
                     "15. Menú de opciones GESTIÓN CINEMATOGRAFICA\n" +
-                    "16. Ingresar datos de objeto Persona");
+                    "16. Ingresar datos de objeto Persona\n" +
+                    "17. ");
             option = Integer.parseInt(lector.next());
 
             switch (option)
