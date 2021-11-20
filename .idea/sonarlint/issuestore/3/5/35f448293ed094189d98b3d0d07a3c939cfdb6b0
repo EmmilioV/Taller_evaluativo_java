@@ -1,0 +1,17 @@
+
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ıû¤#
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‰Æıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ØëÔé
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ğÓà·
+S	java:S106"9Replace this use of System.out or System.err by a logger.(”ìšŞşÿÿÿÿ
+N	java:S1068"9Replace this use of System.out or System.err by a logger.(ÓÀöº
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(«‘«ÿÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(×ÏÊÁøÿÿÿÿ
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(ìåŠ
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(”ğ·ûÿÿÿÿ
+N	java:S106P"9Replace this use of System.out or System.err by a logger.(¤°û‰
+S	java:S106Q"9Replace this use of System.out or System.err by a logger.(ƒÇãˆúÿÿÿÿ
+s
+java:S11928"]Define a constant instead of duplicating this literal "la persona con el nombre de " 5 times.(ÓÀöº
+{
+java:S1488."`Immediately return this expression instead of assigning it to the temporary variable "personas".(³¸·úÿÿÿÿ

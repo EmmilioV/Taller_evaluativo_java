@@ -15,3 +15,7 @@ f
 6src/main/java/com/sofka/ejercicio12/EjercicioDoce.java,6\8\68ee73b1e87fceceea90b2a55f5f267a425e68f3
 c
 3src/main/java/com/sofka/ejercicio9_10_11/Texto.java,8\3\83dee6a840b1e078dfc5c8b5db72e406c7889ba9
+`
+0src/main/java/com/sofka/ejercicio16/Persona.java,f\8\f8cc5c33f999ed489dcff8a52fb635d8b46cb9b2
+k
+;src/main/java/com/sofka/ejercicio16/ControladorPersona.java,3\5\35f448293ed094189d98b3d0d07a3c939cfdb6b0
