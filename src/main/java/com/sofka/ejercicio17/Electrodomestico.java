@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class Electrodomestico {
-    private double precioBase;
-    private String color;
-    private char consumoEnergetico;
-    private double peso;
-    private double precioFinal;
+    double precioBase;
+    String color;
+    char consumoEnergetico;
+    double peso;
+    double precioFinal;
 
     public Electrodomestico() {
         this.precioBase = 100;
@@ -83,7 +83,7 @@ public class Electrodomestico {
             default: break;
         }
 
-        this.precioFinal += + aumento;
+        this.precioFinal += aumento;
     }
 
     public void aumentarPrecioPorPeso() {
